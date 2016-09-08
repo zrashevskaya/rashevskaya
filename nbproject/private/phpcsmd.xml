@@ -1,0 +1,6 @@
+#Phpcsmd options
+#Mon Sep 05 17:35:52 EEST 2016
+phpcsmd.phpcs.standard=/home/drupalschool3/Downloads/PhpStorm-162.1889.1/plugins/drupal/lib/drupal.jar
+phpcsmd.phpmd.static=
+phpcsmd.phpcs.static=
+phpcsmd.phpcpd.static=

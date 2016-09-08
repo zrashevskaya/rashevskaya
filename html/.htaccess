@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteRule ^index\.php$ index.html [R=301]
+ErrorDocument 404 /error_pages/404.html
