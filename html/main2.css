@@ -23,17 +23,18 @@ article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
 
-
 /*-----------------My CSS-----------------*/
-body{
+body {
     background: #bebebc;
     font: 14px sans-serif;
 }
-section{
+
+section {
     background: #24323d;
     width: 382px;
     height: 382px;
@@ -42,7 +43,7 @@ section{
     border-radius: 4px;
 }
 
-a{
+a {
     display: inline-block;
     text-decoration: none;
     width: 192px;
@@ -53,47 +54,67 @@ a{
     vertical-align: middle;
     color: #fff;
 }
-#signUp{
+
+#signUp {
     background: #1ab188;
 }
-#logIn{
+
+#logIn {
     background: #435259;
     margin-left: -6px;
 }
 
-h1{
+h1 {
     font-size: 22px;
     color: #fff;
     text-align: center;
     margin: 32px 0 2px;
 }
-input{
+
+input {
     display: inline-block;
     height: 32px;
     width: 100%;
     margin: 14px 0;
     box-sizing: border-box;
-    color:#798790;
+    color: #798790;
     padding-left: 10px;
 }
 
-#firstName{
+#firstName {
     margin-right: 14px;
 }
-#firstName, #lastName{
+
+#firstName, #lastName {
     width: 182px;
     display: inline-block;
 }
-input[type="submit"]{
+
+input[type="submit"] {
     height: 57px;
     color: #fff;
     font-size: 22px;
 }
 
-::-webkit-input-placeholder {color:#798790; font-size: 14px;}
-::-moz-placeholder          {color:#798790; font-size: 14px;}
-:-moz-placeholder           {color:#798790; font-size: 14px;}
-:-ms-input-placeholder      {color:#798790; font-size: 14px;}
+::-webkit-input-placeholder {
+    color: #798790;
+    font-size: 14px;
+}
+
+::-moz-placeholder {
+    color: #798790;
+    font-size: 14px;
+}
+
+:-moz-placeholder {
+    color: #798790;
+    font-size: 14px;
+}
+
+:-ms-input-placeholder {
+    color: #798790;
+    font-size: 14px;
+}
 
 .error {
     color: red;

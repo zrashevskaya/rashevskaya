@@ -1,4 +1,4 @@
-function showError(errorMessage){
+function showError(errorMessage) {
     document.getElementById('error').className = 'error';
     document.getElementById('error').innerHTML = errorMessage;
 }
@@ -12,7 +12,7 @@ function validateForm(form) {
         showError('Please, write your First Name');
         return false;
     }
-    else if (document.forms["registry"]["firstName"].value.length < 2){
+    else if (document.forms["registry"]["firstName"].value.length < 2) {
         showError('Your First Name is too short!!!');
         return false;
     }
@@ -21,7 +21,7 @@ function validateForm(form) {
         showError('Please, write your Last Name');
         return false;
     }
-    else if (document.forms["registry"]["lastName"].value.length < 3){
+    else if (document.forms["registry"]["lastName"].value.length < 3) {
         showError('Your Last Name is too short!!!');
         return false;
     }
@@ -30,7 +30,7 @@ function validateForm(form) {
         showError('Please, write your e-mail');
         return false;
     }
-    else if (!pattern.test(document.forms["registry"]["email"].value)){
+    else if (!pattern.test(document.forms["registry"]["email"].value)) {
         showError('Please, check you e-mail. It seems to be incorrect.');
         return false;
     }
@@ -39,7 +39,7 @@ function validateForm(form) {
         showError('Please, write your password');
         return false;
     }
-    else if (document.forms["registry"]["password"].value.length < 9){
+    else if (document.forms["registry"]["password"].value.length < 9) {
         showError('Your password is too short!!! It should be not less than 9 simbols.');
         return false;
     }
