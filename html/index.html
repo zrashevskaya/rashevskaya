@@ -4,12 +4,13 @@
         <title>Form</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="mySkript.js"></script>
     </head>
     <body>
         <section>
         <a href="#" id="signUp">Sign Up</a>
         <a href="" id="logIn">Log In</a>
-        <form enctype="multipart/form-data" action="" method="post">
+        <form enctype="multipart/form-data" name="registry" action="" onsubmit="return validateForm()" method="post">
             <h1>Sign Up for Free</h1>
             <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
             <label for="firstName">*</label>
