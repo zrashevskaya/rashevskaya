@@ -23,18 +23,17 @@ article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
 }
-
 body {
     line-height: 1;
 }
 
+
 /*-----------------My CSS-----------------*/
-body {
+body{
     background: #bebebc;
     font: 14px sans-serif;
 }
-
-section {
+section{
     background: #24323d;
     width: 382px;
     height: 382px;
@@ -43,7 +42,7 @@ section {
     border-radius: 4px;
 }
 
-a {
+a{
     display: inline-block;
     text-decoration: none;
     width: 192px;
@@ -54,71 +53,86 @@ a {
     vertical-align: middle;
     color: #fff;
 }
-
-#signUp {
+#signUp{
     background: #1ab188;
 }
-
-#logIn {
+#logIn{
     background: #435259;
     margin-left: -6px;
 }
 
-h1 {
+form{
+    position: relative;
+}
+h1{
     font-size: 22px;
     color: #fff;
     text-align: center;
-    margin: 32px 0 2px;
+    margin: 32px 0;
 }
-
-input {
+input{
+    background: none;
     display: inline-block;
     height: 32px;
+    border: 1px solid #798790;
     width: 100%;
     margin: 14px 0;
     box-sizing: border-box;
-    color: #798790;
+    color:#798790;
     padding-left: 10px;
 }
-
-#firstName {
+input:focus{
+    border: 1px solid #1ab188;
+}
+label{
+    display: inline;
+    position: relative;
+    margin: -5px;
+    cursor: text;
+    height: 22px;
+    width: 5px;
+    color: #1ab188;
+    opacity: 1;
+    font-size: 14px;
+}
+label[for="firstName"]{
+    top:1px;
+    left: -116px;
+}
+label[for="lastName"]{
+    top:-59px;
+    right: -283px;
+}
+label[for="email"]{
+    top:-60px;
+    right: -105px;
+}
+label[for="password"]{
+    top:-74px;
+    right: -115px;
+}
+input:valid+label{
+    opacity: 0;
+}
+#firstName{
     margin-right: 14px;
 }
-
-#firstName, #lastName {
+#firstName, #lastName{
     width: 182px;
     display: inline-block;
 }
-
-input[type="submit"] {
+input[type="submit"]{
     height: 57px;
+    background: #1ab188;
     color: #fff;
+    border: none;
     font-size: 22px;
 }
-
-::-webkit-input-placeholder {
-    color: #798790;
-    font-size: 14px;
+input[type="submit"]:hover{
+    background: #09a077;
+    cursor:pointer;
 }
-
-::-moz-placeholder {
-    color: #798790;
-    font-size: 14px;
-}
-
-:-moz-placeholder {
-    color: #798790;
-    font-size: 14px;
-}
-
-:-ms-input-placeholder {
-    color: #798790;
-    font-size: 14px;
-}
-
-.error {
-    color: red;
-    border: 1px solid red;
-    height: 32px;
-    text-align: center;
-}
+::-webkit-input-placeholder {color:#798790; font-size: 14px;}
+::-moz-placeholder          {color:#798790; font-size: 14px;}
+:-moz-placeholder           {color:#798790; font-size: 14px;}
+:-ms-input-placeholder      {color:#798790; font-size: 14px;}

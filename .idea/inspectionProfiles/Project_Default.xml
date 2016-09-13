@@ -12,5 +12,10 @@
       <scope name="Project Files" level="WEAK WARNING" enabled="true" />
       <option name="CODING_STANDARD" value="Drupal" />
     </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
   </profile>
 </component>
