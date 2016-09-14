@@ -9,7 +9,9 @@
       <option name="NAMING" value="true" />
     </inspection_tool>
     <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
-      <scope name="Project Files" level="WEAK WARNING" enabled="true" />
+      <scope name="Project Files" level="WEAK WARNING" enabled="true">
+        <option name="CODING_STANDARD" value="Drupal" />
+      </scope>
       <option name="CODING_STANDARD" value="Drupal" />
     </inspection_tool>
     <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">

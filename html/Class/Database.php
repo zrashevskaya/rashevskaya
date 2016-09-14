@@ -9,6 +9,12 @@
 class Database {
   /**
    *
+   *
+   *
+   */
+  private static $instance = NULL;
+  /**
+   *
    * @var string
    *
    */
@@ -31,34 +37,24 @@ class Database {
    *
    */
   private $dbname = DB_NAME;
-
   /**
    *
    *
    *
    */
   private $dbh;
-
   /**
    *
    *
    *
    */
   private $error;
-
   /**
    *
    *
    *
    */
   private $stmt;
-
-  /**
-   *
-   *
-   *
-   */
-  private static $instance = null;
 
   /**
    *
@@ -87,7 +83,7 @@ class Database {
    *
    */
   public static function connect() {
-    if(self::$instance == null){
+    if (self::$instance == NULL) {
       self::$instance = new Database();
     }
     return self::$instance;
@@ -131,16 +127,7 @@ class Database {
    *
    *
    */
-  public function execute(){
-    return $this->stmt->execute();
-  }
-
-  /**
-   *
-   *
-   *
-   */
-  public function resultset(){
+  public function resultset() {
     $this->execute();
     return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -150,7 +137,16 @@ class Database {
    *
    *
    */
-  public function single(){
+  public function execute() {
+    return $this->stmt->execute();
+  }
+
+  /**
+   *
+   *
+   *
+   */
+  public function single() {
     $this->execute();
     return $this->stmt->fetch(PDO::FETCH_ASSOC);
   }
@@ -160,7 +156,7 @@ class Database {
    *
    *
    */
-  public function rowCount(){
+  public function rowCount() {
     return $this->stmt->rowCount();
   }
 
@@ -169,7 +165,7 @@ class Database {
    *
    *
    */
-  public function lastInsertId(){
+  public function lastInsertId() {
     return $this->dbh->lastInsertId();
   }
 
@@ -178,7 +174,7 @@ class Database {
    *
    *
    */
-  public function beginTransaction(){
+  public function beginTransaction() {
     return $this->dbh->beginTransaction();
   }
 
@@ -187,7 +183,7 @@ class Database {
    *
    *
    */
-  public function endTransaction(){
+  public function endTransaction() {
     return $this->dbh->commit();
   }
 
@@ -196,7 +192,7 @@ class Database {
    *
    *
    */
-  public function cancelTransaction(){
+  public function cancelTransaction() {
     return $this->dbh->rollBack();
   }
 
@@ -205,7 +201,7 @@ class Database {
    *
    *
    */
-  public function debugDumpParams(){
+  public function debugDumpParams() {
     return $this->stmt->debugDumpParams();
   }
 }

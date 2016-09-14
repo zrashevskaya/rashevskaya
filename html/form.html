@@ -10,11 +10,13 @@
 </head>
 <body>
 <section>
-    <a href="#registry" id="signUp" class="active" onclick="changeColorSignUp()">Sign Up</a>
-    <a href="#enter" id="logIn" onclick="changeColorLogIn()">Log In</a>
-    <form class="tab" id="registry" name="registry" onsubmit="return validateForm(registry)" action="signup.php" method="post">
+    <a href="#registry" id="signUp" onclick="changeColorSignUp()">Sign Up</a>
+    <a href="#enter" id="logIn" class="active" onclick="changeColorLogIn()">Log In</a>
+    <form class="tab" id="registry" name="registry" onsubmit="return validateFormReg()" action="signup.php"
+          method="post">
         <h1>Sign Up for Free</h1>
-        <div id="message" class="<?php echo $msgclass;?>"><?php echo $message;?></div>
+        <div id="message" class="<?php echo $msgClass;?>"><?php echo $message;?></div>
+
         <input type="text" id="firstName" name="firstName" placeholder="First Name*">
 
         <input type="text" id="lastName" name="lastName" placeholder="Last Name*">
@@ -25,16 +27,13 @@
 
         <input type="submit" value="GET STARTED">
     </form>
-    <form class="tab" id="enter" name="login" onsubmit="return validateForm(login)" action="login.php" method="post">
+    <form class="tab" id="enter" name="enter" onsubmit="return validateFormLog()" action="login.php" method="post">
         <h1>Log in</h1>
-        <div id="message"></div>
-        <input type="text" id="firstName" name="firstName" placeholder="First Name*">
+        <div id="messageLog" class="<?php echo $logMsgClass;?>"><?php echo $logMessage;?></div>
 
-        <input type="text" id="lastName" name="lastName" placeholder="Last Name*">
+        <input class="loginInput" type="text" id="emailLog" name="emailLog" placeholder="Email Address*">
 
-        <input type="text" id="email" name="email" placeholder="Email Address*">
-
-        <input type="password" id="password" name="password" placeholder="Set A Password*">
+        <input class="loginInput" type="password" id="passLog" name="passLog" placeholder="Set A Password*">
 
         <input type="submit" value="GET STARTED">
     </form>

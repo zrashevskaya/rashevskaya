@@ -56,27 +56,23 @@ a {
     background: #435259;
 }
 
-.active{
+.active {
     background: #1ab188;
 }
 
-.green{
+.green {
     background: #1ab188;
 }
 
-.gray{
+.gray {
     background: #435259;
-}
-#signUp{
-    /*background: #1ab188;*/
 }
 
 #logIn {
-    /*background: #435259;*/
     margin-left: -6px;
 }
 
-form{
+form {
     width: 382px;
 }
 
@@ -146,15 +142,31 @@ input[type="submit"] {
     text-align: center;
 }
 
-.tab{
+.tab {
     visibility: hidden;
     position: absolute;
     opacity: 0;
     z-index: 2;
+    background: #24323d;
 }
 
-#enter:target, #registry:target{
+#enter {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+#registry {
+    height: 352px;
+}
+
+#enter:target, #registry:target {
     visibility: visible;
     opacity: 1;
     z-index: 5;
+}
+
+.loginInput {
+    height: 52px;
+    font-size: 16px;
 }

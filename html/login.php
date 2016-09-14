@@ -1,23 +1,40 @@
 <?php
-
-  /**
-   * Testing OOP
-   *
-   */
-$id = 2;
-try {
-    $db = new PDO(
-        'mysql:host=rashevskaya.com; dbname=mydb; charset=utf8mb4',
-        'rashevskaya', 'Adyax-2016'
-    );
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $stmt = $db->prepare('SELECT * FROM authors WHERE author_id = ?');
-    $stmt->execute(array($id));
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($results);
+session_start();
+if (isset($_POST['emailLog'])) {
+  $email = trim($_POST['emailLog']);
+  if ($email == '') {
+    unset($email);
+  }
 }
-catch (PDOException $ex) {
-    echo "An Error occured!";
-    some_logging_function($ex->getMessage());
+
+if (isset($_POST['passLog'])) {
+  $password = trim($_POST['passLog']);
+  if ($password == '') {
+    unset($password);
+  }
+}
+
+$pass = sha1($email . $password);
+
+if (empty($email) or empty($password)) {
+  $logMessage = ('All fields should be filled in!');
+  $logMsgClass = 'error';
+  include 'index.php';
+}
+else {
+  include_once 'dbconf.php';
+
+  $db = Database::connect();
+  $db->query('SELECT * FROM `user` WHERE `password` = :pass');
+  $db->bind(':pass', $pass);
+  $result = $db->single();
+  if (empty($db->rowCount())) {
+    $logMessage = ('Sorry, your e-mail or password is wrong.');
+    $logMsgClass = 'error';
+    include 'index.php';
+  }
+  else {
+    $_SESSION['email'] = $result['email'];
+    exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
+  }
 }
