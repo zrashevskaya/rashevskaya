@@ -9,7 +9,7 @@
     <schema id="4" name="mysql"/>
     <schema id="5" name="performance_schema"/>
     <schema id="6" name="phpmyadmin"/>
-    <table id="7" parent="1" name="user"/>
+    <table id="7" parent="1" name="users"/>
     <column id="8" parent="7" name="user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>

@@ -55,27 +55,27 @@ else {
     }
 
     $pass = sha1($email . $password);
-    include_once 'dbconf.php';
 
-    $db = Database::connect();
-    $db->query('SELECT `user_id` FROM `user` WHERE `email` = :email');
-    $db->bind(':email', $email);
-    $db->resultset();
-    if (!empty($db->rowCount())) {
+    include_once 'dbconnect.php';
+    $result = User::all(array(
+      'conditions' => array(
+        'email = ?',
+        $email,
+      ),
+    ));
+
+    if (!empty($result)) {
       $message = ('Sorry, this e-mail is already registered.');
       $msgClass = 'error';
     }
     else {
-      $db->query(
-        'INSERT INTO `user`(`user_id`, `firstname`, `lastname`, `email`, `password`)
-       VALUES (null, :firstname, :lastname, :email, :password)'
-      );
-      $db->bind(':firstname', $firstName);
-      $db->bind(':lastname', $lastName);
-      $db->bind(':email', $email);
-      $db->bind(':password', $pass);
-      $result = $db->execute();
-      if ($result == 'true') {
+      $user = User::create(array(
+        'firstname' => $firstName,
+        'lastname' => $lastName,
+        'email' => $email,
+        'password' => $pass,
+      ));
+      if ($user->attributes('user_id') == TRUE) {
         $message = 'Success!';
         $msgClass = 'okey';
       }
@@ -90,4 +90,3 @@ else {
   }
 }
 include_once 'index.php';
-

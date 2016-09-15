@@ -6,8 +6,8 @@
  * Time: 17:32
  */
 session_start();
-if(isset($_SESSION['email'])){
-  unset($_SESSION['email']);
+if(isset($_SESSION['id'])){
+  unset($_SESSION['id']);
 }
 exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
 

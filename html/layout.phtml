@@ -8,6 +8,6 @@
 <form action="exit.php" method="post">
   <input type="submit" value="Back">
 </form>
-<p>Hello, my <?php include_once 'Class/user.php'; $my = new user(); echo $my->firstName;?>!</p>
+<p>Hello, my <?php include_once 'dbconnect.php'; echo $my->firstName;?>!</p>
 </body>
 </html>

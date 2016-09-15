@@ -22,19 +22,24 @@ if (empty($email) or empty($password)) {
   include 'index.php';
 }
 else {
-  include_once 'dbconf.php';
+  include_once 'dbconnect.php';
 
-  $db = Database::connect();
-  $db->query('SELECT * FROM `user` WHERE `password` = :pass');
-  $db->bind(':pass', $pass);
-  $result = $db->single();
-  if (empty($db->rowCount())) {
+  $result = User::all(array(
+    'conditions' => array(
+      'email = ? and password = ?',
+      $email,
+      $pass
+    )
+  ));
+
+  if (empty($result)) {
     $logMessage = ('Sorry, your e-mail or password is wrong.');
     $logMsgClass = 'error';
     include 'index.php';
   }
   else {
-    $_SESSION['email'] = $result['email'];
+    $_SESSION['id'] = $result[0]->user_id;
     exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");
   }
+
 }
